@@ -11,7 +11,6 @@ And that's why we have built Primechain.
 Table of Contents
 -----------------
 
-- [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
