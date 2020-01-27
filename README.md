@@ -13,6 +13,8 @@ Table of Contents
 1. [Prerequisites](#1-prerequisites)
 2. [Getting Started](#2-getting-started)
 3. [Updating Primechain](#3-updating-primechain)
+4. [API Documentation](#4-api-documentation)
+5. [Sandbox](#5-sandbox)
 
 ## 1. Prerequisites
 - To setup Primechain you need an 
@@ -57,3 +59,6 @@ cd ~
 cd primechain
 git pull && pm2 restart bin/www
 ```
+## 4. API Documentation
+
+## 5. Sandbox
