@@ -14,7 +14,7 @@ Table of Contents
 - [Getting Started](#getting-started)
 - [Updating Primechain](#updating-primechain)
 
-Prerequisites
+1. Prerequisites
 -------------
 - To setup Primechain you need an 
   - Ubuntu 16.0.4 machine (1 GB RAM, 1 CPU) with CURL and git. 
