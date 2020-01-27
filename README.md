@@ -28,6 +28,7 @@ Table of Contents
 Login to server / VM as a sudo or root user. Then run the following:
 ```
 sudo git clone https://primechainuser@github.com/Primechain/primechain
+<Enter-Password>
 cd primechain/setup
 sudo bash -e primechain_setup.sh <ip-address>
 ```
