@@ -14,8 +14,8 @@ Table of Contents
 - [Getting Started](#getting-started)
 - [Updating Primechain](#updating-primechain)
 
-1. Prerequisites
--------------
+
+# 1. Prerequisites
 - To setup Primechain you need an 
   - Ubuntu 16.0.4 machine (1 GB RAM, 1 CPU) with CURL and git. 
   - The ports used are 22, 80, 1410, 2512, 15590 and 61172.
