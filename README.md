@@ -10,7 +10,7 @@ And that's why we have built Primechain.
 
 Table of Contents
 -----------------
-- [Prerequisites](#prerequisites)
+- 1. [Prerequisites](#1-prerequisites)
 - [Getting Started](#getting-started)
 - [Updating Primechain](#updating-primechain)
 
