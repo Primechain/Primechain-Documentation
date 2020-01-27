@@ -10,15 +10,9 @@ And that's why we have built Primechain.
 
 Table of Contents
 -----------------
-
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [List of Packages](#list-of-packages)
 - [Updating Primechain](#updating-primechain)
-- [Create a plugin](#create-a-plugin)
-- [Components](#components)
-
 
 Prerequisites
 -------------
