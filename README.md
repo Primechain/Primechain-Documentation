@@ -60,5 +60,7 @@ cd primechain
 git pull && pm2 restart bin/www
 ```
 ## 4. API Documentation
+[https://www.primechaintech.com/documentation](https://www.primechaintech.com/documentation)
 
 ## 5. Sandbox
+[https://primechainsandbox.com](https://primechainsandbox.com)
