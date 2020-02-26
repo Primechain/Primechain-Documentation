@@ -12,9 +12,10 @@ Table of Contents
 -----------------
 1. [Prerequisites](#1-prerequisites)
 2. [Getting Started](#2-getting-started)
-3. [Updating Primechain](#3-updating-primechain)
-4. [API Documentation](#4-api-documentation)
-5. [Sandbox](#5-sandbox)
+3. [Obtaining third party API keys](#3-obtaining-third-party-api-keys)
+4. [Updating Primechain](#4-updating-primechain)
+5. [API Documentation](#5-api-documentation)
+6. [Sandbox](#6-sandbox)
 
 ## 1. Prerequisites
 - To setup Primechain you need an 
@@ -39,7 +40,7 @@ sudo bash -e primechain_setup.sh <ip-address> <email-address>
 
 2. The email address is the admin email address
 
-**The setup should take about 6 minutes. You will see something like this:
+**The setup should take about 6 minutes. Once done, you will see something like this:**
 ```
 =============================================
 ADMIN LOGIN CREDENTIALS FOR WEB APPLICATION
@@ -70,14 +71,14 @@ To view mysql, mongo and multichain credentials
 nano ~root/primechain-api.out
 ```
 
-The web application credentials can be obtained from:**
+***The web application credentials can be obtained from:**
 ```
 su primechain-user 
 cd ~
 cd primechain
 sudo nano .env
 ```
-Update the below in .env, to use sendgrid for transactional emails.
+***Update the below in .env, to use sendgrid for transactional emails.***
 ```
 MAIL_SERVICE_NAME=SENDGRID
 MAIL_USERNAME=<your-username>
@@ -98,8 +99,7 @@ ClientAliveCountMax 720
 ```
 
 
-Obtaining API Keys
-------------------
+## 3. Obtaining third party API keys
 
 To use any of the included APIs or OAuth authentication methods, you
 will need
@@ -174,7 +174,7 @@ Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-
 discussion for ways to handle it.
 
 
-## 3. Updating Primechain 
+## 4. Updating Primechain 
 
 Login to the server / VM as a sudo or root user.
 
@@ -184,8 +184,8 @@ cd ~
 cd primechain
 git pull && pm2 restart bin/www
 ```
-## 4. API Documentation
+## 5. API Documentation
 [https://www.primechaintech.com/documentation](https://www.primechaintech.com/documentation)
 
-## 5. Sandbox
+## 6. Sandbox
 [https://primechainsandbox.com](https://primechainsandbox.com)
