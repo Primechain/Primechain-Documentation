@@ -19,7 +19,7 @@ Table of Contents
 ## 1. Prerequisites
 - To setup Primechain you need an 
   - Ubuntu 16.0.4 machine (1 GB RAM, 1 CPU) with CURL and git. 
-  - The ports used are 22, 80, 1410, 2512, 15590 and 61172.
+  - The ports used are 22, 80, 443, 1410, 2512, 15590 and 61172.
 
 **Notes:** 
 - For full functionality of PWA, SSL enabed domain is needed. 
@@ -32,22 +32,69 @@ Login to server / VM as a sudo or root user. Then run the following:
 sudo git clone https://primechainuser@github.com/Primechain/primechain
 <Enter-Password>
 cd primechain/setup
-sudo bash -e primechain_setup.sh <ip-address>
+sudo bash -e primechain_setup.sh <ip-address> <email-address>
 ```
-**The setup should take about 6 minutes. Once it is setup, all the credentials can be obtained from:**
+***Note:***
+1. Instead of the IP address you can enter the domain name above. Or after setup, go to the .env file and change the IP address or domain name.
+
+2. The email address is the admin email address
+
+**The setup should take about 6 minutes. You will see something like this:
+```
+=============================================
+ADMIN LOGIN CREDENTIALS FOR WEB APPLICATION
+=============================================
+
+#######################################################
+#  Email address: info@primechain.in #
+#  Password: 5Ofxy3bmMx0Z9xfelnDoHWbaGs5T2RyItZ1n4RYL #
+#######################################################
+
+
+===================================================
+WEB APPLICATION UP AND RUNNING IN THE FOLLOWING URL
+===================================================
+http://example.com:1410
+
+
+===================================================
+API APPLICATION UP AND RUNNING IN THE FOLLOWING URL
+===================================================
+http://example.com:2512/api/v1/get_api_key
+
+All your credentials are in root/primechain-api.out
+
+```
+To view mysql, mongo and multichain credentials
+```
+nano ~root/primechain-api.out
+```
+
+The web application credentials can be obtained from:**
 ```
 su primechain-user 
 cd ~
 cd primechain
 sudo nano .env
 ```
-Copy Primechain-API username and password if you will be using the API service.
-
 Update the below in .env, to use sendgrid for transactional emails.
 ```
 MAIL_SERVICE_NAME=SENDGRID
 MAIL_USERNAME=<your-username>
 MAIL_PASSWORD=<your-password>
+```
+Enter your **google** and **facebook** credentials if you want to use login through these services. If not, comment out the relevant code in `src/web/views/users/account/login.hbs`
+
+Copy **Primechain-API** username and password if you will be using the API service.
+
+
+To increase server timeout, login as root into your VM and then:
+```
+nano /etc/ssh/sshd_config
+
+# Then add the following lines
+ClientAliveInterval 120
+ClientAliveCountMax 720
 ```
 
 
