@@ -12,10 +12,13 @@ Table of Contents
 -----------------
 1. [Prerequisites](#1-prerequisites)
 2. [Getting Started](#2-getting-started)
-3. [Obtaining third party API keys](#3-obtaining-third-party-api-keys)
-4. [Updating Primechain](#4-updating-primechain)
-5. [API Documentation](#5-api-documentation)
-6. [Sandbox](#6-sandbox)
+3. [Setting up ngnix and SSL](#3-setting-up-ngnix-and-ssl)
+4. [Adding nodes](#4-adding-nodes)
+5. [Updating Primechain](#5-updating-primechain)
+6. [API Documentation](#6-api-documentation)
+7. [Sandbox](#7-sandbox)
+8. [Basic troubleshooting](#8-basic-troubleshooting)
+9. [Obtaining third party API keys](#8-obtaining-third-party-api-keys)
 
 ## 1. Prerequisites
 - To setup Primechain you need an 
@@ -98,8 +101,36 @@ ClientAliveInterval 120
 ClientAliveCountMax 720
 ```
 
+## 3. Setting up ngnix and SSL
 
-## 3. Obtaining third party API keys
+
+## 4. Adding nodes
+https://github.com/Primechain/primechain_nodes/blob/master/README.md
+
+## 5. Updating Primechain 
+
+Login to the server / VM as a sudo or root user.
+
+```
+sudo su primechain-user 
+cd ~
+cd primechain
+
+# Then one of the following
+sudo git pull
+sudo git pull && pm2 restart 1
+sudo git pull && npm i && pm2 restart 1
+```
+
+## 6. API Documentation
+[https://www.primechaintech.com/documentation](https://www.primechaintech.com/documentation)
+
+## 7. Sandbox
+[https://primechainsandbox.com](https://primechainsandbox.com)
+
+## 8. Basic troubleshooting
+
+## 9. Obtaining third party API keys
 
 To use any of the included APIs or OAuth authentication methods, you
 will need
@@ -172,20 +203,3 @@ redirected back to the home page with appended hash `#_=_` in the URL.
 It is *not* a bug. See this [Stack
 Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url)
 discussion for ways to handle it.
-
-
-## 4. Updating Primechain 
-
-Login to the server / VM as a sudo or root user.
-
-```
-sudo su primechain-user 
-cd ~
-cd primechain
-git pull && pm2 restart bin/www
-```
-## 5. API Documentation
-[https://www.primechaintech.com/documentation](https://www.primechaintech.com/documentation)
-
-## 6. Sandbox
-[https://primechainsandbox.com](https://primechainsandbox.com)
