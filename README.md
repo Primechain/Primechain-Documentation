@@ -18,7 +18,7 @@ Table of Contents
 6. [API Documentation](#6-api-documentation)
 7. [Sandbox](#7-sandbox)
 8. [Basic troubleshooting](#8-basic-troubleshooting)
-9. [Obtaining third party API keys](#8-obtaining-third-party-api-keys)
+9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
 
 ## 1. Prerequisites
 - To setup Primechain you need an 
@@ -102,7 +102,47 @@ ClientAliveCountMax 720
 ```
 
 ## 3. Setting up ngnix and SSL
+Login to the VM as root and then
+```
+sudo ufw allow https
+sudo apt install nginx
+sudo nano /etc/nginx/sites-available/default
 
+# Uncomment the following in SSL configuration
+
+listen 443 ssl default_server;
+listen [::]:443 ssl default_server;
+
+# Add the following to the location part of the server block
+# Add www.yourdomain.com only if you have made suitable A record entry in DNS
+
+    server_name yourdomain.com www.yourdomain.com;
+
+    location / {
+        proxy_pass http://<ip-address>:1410; #whatever port your app runs on
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+# Check NGINX config
+sudo nginx -t
+
+# Restart NGINX
+sudo service nginx restart
+
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-nginx
+sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+
+# Only valid for 90 days, test the renewal process with
+certbot renew --dry-run
+
+```
+Now visit https://yourdomain.com and you should see your web app.
 
 ## 4. Adding nodes
 https://github.com/Primechain/primechain_nodes/blob/master/README.md
@@ -129,6 +169,20 @@ sudo git pull && npm i && pm2 restart 1
 [https://primechainsandbox.com](https://primechainsandbox.com)
 
 ## 8. Basic troubleshooting
+***Stop / start multichain***
+Login to the server / VM as a sudo or root user.
+For ***stopping*** multichain:
+```
+sudo su primechain-user 
+cd ~
+multichain-cli Primechain stop
+```
+For ***starting*** multichain:
+```
+sudo su primechain-user 
+cd ~
+multichaind Primechain --daemon
+```
 
 ## 9. Obtaining third party API keys
 
