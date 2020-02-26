@@ -243,23 +243,25 @@ multichaind Primechain --daemon
 
 ## 9. Obtaining third party API keys
 
-To use any of the included APIs or OAuth authentication methods, you
-will need
-to obtain appropriate credentials: Client ID, Client Secret, API Key, or
-Username & Password. You will need to go through each provider to
-generate new
-credentials.
+### Google
 
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1000px-Google_2015_logo.svg.png"
-width="200">
+1. Visit <a href="https://cloud.google.com/console/project" target="_blank">Google Cloud Console</a>.
+2. Click on the **Create Project** button.
+3. Enter *Project Name*, then click on **Create** button.
+4. Click on ***APIs & services*** in the top navigation bar.
+5. Click on ***OAuth consent screen***. Choose user type as ***External*** and click on ***Create***. Fill the relevant details and click on ***Save***.
+6. Click on ***Credentials***.
+7. Click on ***Credentials --> Create credentials --> OAuth client ID***. 
+- Choose ***Application type*** as ***Web Application***.
+- Choose ***Authorized Javascript origins*** as something like https://test.primechainsandbox.com
+- Choose ***Authorized redirect URI*** as http://test.primechainsandbox.com/auth/google/callback
 
-- Visit <a href="https://cloud.google.com/console/project"
-target="_blank">Google Cloud Console</a>
-1. Click on the **Create Project** button
-2. Enter *Project Name*, then click on **Create** button
-3. Click on *APIs & services* 
+8. Copy your client ID (in .env use it as ***GOOGLE_ID*** and client secret as ***GOOGLE_SECRET***
 
+9. Login to the VM as root as restart pm2
+```
+pm2 restart 1
+```
 <hr>
 
 <img
