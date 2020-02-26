@@ -243,14 +243,20 @@ multichaind Primechain --daemon
 
 ## 9. Obtaining third party API keys
 
-### Google
+### 9.1 Google
 
 1. Visit <a href="https://cloud.google.com/console/project" target="_blank">Google Cloud Console</a>.
+
 2. Click on the **Create Project** button.
+
 3. Enter *Project Name*, then click on **Create** button.
+
 4. Click on ***APIs & services*** in the top navigation bar.
+
 5. Click on ***OAuth consent screen***. Choose user type as ***External*** and click on ***Create***. Fill the relevant details and click on ***Save***.
+
 6. Click on ***Credentials***.
+
 7. Click on ***Credentials --> Create credentials --> OAuth client ID***. 
 - Choose ***Application type*** as ***Web Application***.
 - Choose ***Authorized Javascript origins*** as something like https://test.primechainsandbox.com
@@ -258,37 +264,25 @@ multichaind Primechain --daemon
 
 8. Copy your client ID (in .env use it as ***GOOGLE_ID*** and client secret as ***GOOGLE_SECRET***
 
-9. Login to the VM as root as restart pm2
-```
-pm2 restart 1
-```
+9. Login to the VM as root as restart pm2 `pm2 restart 1`
 <hr>
 
-<img
-src="https://en.facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png"
-width="90">
+### 9.2 Facebook
 
-- Visit <a href="https://developers.facebook.com/"
-target="_blank">Facebook Developers</a>
-- Click **My Apps**, then select **Add a New App* from the dropdown menu
-- Enter a new name for your app
-- Click on the **Create App ID** button
-- Find the Facebook Login Product and click on **Facebook Login**
-- Instead of going through their Quickstart, click on **Settings** for
-your app in the top left corner
-- Copy and paste *App ID* and *App Secret* keys into `.env`
-- **Note:** *App ID* is **FACEBOOK_ID**, *App Secret* is
-**FACEBOOK_SECRET** in `.env`
-- Enter `localhost` under *App Domains*
-- Choose a **Category** that best describes your app
-- Click on **+ Add Platform** and select **Website**
-- Enter `http://localhost:8080` under *Site URL*
-- Click on the *Settings* tab in the left nav under Facebook Login
-- Enter `http://localhost:8080/auth/facebook/callback` under Valid OAuth
-redirect URIs
+1. Visit <a href="https://developers.facebook.com/" target="_blank">Facebook Developers</a>
+
+2. Click **My Apps**, then select ***Add a New App*** from the dropdown menu
+
+3. Click on ***Setup*** in ***Facebook Login*** box.
+
+4. Click on ***WWW***
+
+5. Enter Site URL as https://test.primechainsandbox.com and click on Save
+
+6. Click on ***Settings --> Basic*** and copy App ID (use in .env as ***FACEBOOK_ID***) and App Secret (use in .env as ***FACEBOOK_SECRET***). Add App domain as https://test.primechainsandbox.com. Click on Save changes
+
+7. In Products -- Facebook Login --> Settings, in Valid OAuth Redirect URIs, enter https://test.primechainsandbox.com/auth/facebook/callback
 
 **Note:** After a successful sign in with Facebook, a user will be
 redirected back to the home page with appended hash `#_=_` in the URL.
-It is *not* a bug. See this [Stack
-Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url)
-discussion for ways to handle it.
+It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
