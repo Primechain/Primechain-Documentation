@@ -283,6 +283,4 @@ multichaind Primechain --daemon
 
 7. In Products -- Facebook Login --> Settings, in Valid OAuth Redirect URIs, enter https://test.primechainsandbox.com/auth/facebook/callback
 
-**Note:** After a successful sign in with Facebook, a user will be
-redirected back to the home page with appended hash `#_=_` in the URL.
-It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
+**Note:** After a successful sign in with Facebook, a user will be redirected back to the home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
