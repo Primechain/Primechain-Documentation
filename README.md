@@ -256,33 +256,9 @@ width="200">
 
 - Visit <a href="https://cloud.google.com/console/project"
 target="_blank">Google Cloud Console</a>
-- Click on the **Create Project** button
-- Enter *Project Name*, then click on **Create** button
-- Then click on *APIs & auth* in the sidebar and select *API* tab
-- Click on **Google+ API** under *Social APIs*, then click **Enable
-API**
-- Click on **Google Drive API** under *G Suite*, then click **Enable
-API**
-- Click on **Google Sheets API** under *G Suite*, then click **Enable
-API**
-- Next, under *APIs & auth* in the sidebar click on *Credentials* tab
-- Click on **Create new Client ID** button
-- Select *Web Application* and click on **Configure Consent Screen**
-- Fill out the required fields then click on **Save**
-- In the *Create Client ID* modal dialog:
-  - **Application Type**: Web Application
-  - **Authorized Javascript origins**: http://localhost:8080
-  - **Authorized redirect URI**:
-http://localhost:8080/auth/google/callback
-- Click on **Create Client ID** button
-- Copy and paste *Client ID* and *Client secret* keys into `.env`
-
-**Note:** When you ready to deploy to production don't forget to
-add your new URL to *Authorized Javascript origins* and *Authorized
-redirect URI*,
-e.g. `http://my-awesome-app.herokuapp.com` and
-`http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
-The same goes for other providers.
+1. Click on the **Create Project** button
+2. Enter *Project Name*, then click on **Create** button
+3. Click on *APIs & services* 
 
 <hr>
 
