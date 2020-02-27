@@ -262,9 +262,14 @@ multichaind Primechain --daemon
 - Choose ***Authorized Javascript origins*** as something like https://test.primechainsandbox.com
 - Choose ***Authorized redirect URI*** as http://test.primechainsandbox.com/auth/google/callback
 
-8. Copy your client ID (in .env use it as ***GOOGLE_ID*** and client secret as ***GOOGLE_SECRET***
+8. Copy your client ID and client secret.
 
-9. Login to the VM as root as restart pm2 `pm2 restart 1`
+9. Login to the VM as root and update the below in .env:
+```
+GOOGLE_ID=<client id>
+GOOGLE_SECRET=<client secret>
+```
+9. Restart pm2 `pm2 restart 1`
 <hr>
 
 ### 9.2 Facebook
@@ -282,5 +287,13 @@ multichaind Primechain --daemon
 6. Click on ***Settings --> Basic*** and copy App ID (use in .env as ***FACEBOOK_ID***) and App Secret (use in .env as ***FACEBOOK_SECRET***). Add App domain as https://test.primechainsandbox.com. Click on Save changes
 
 7. In Products -- Facebook Login --> Settings, in Valid OAuth Redirect URIs, enter https://test.primechainsandbox.com/auth/facebook/callback
+
+8. Login to the VM as root and update the below in .env:
+```
+FACEBOOK_ID=<FACEBOOK_ID>
+FACEBOOK_SECRET=<FACEBOOK_SECRET>
+```
+
+9. Restart pm2 `pm2 restart 1`
 
 **Note:** After a successful sign in with Facebook, a user will be redirected back to the home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
