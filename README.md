@@ -21,13 +21,13 @@ Table of Contents
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
 
 ## 1. Prerequisites
-- To setup Primechain you need an 
+- To setup Primechain you need: 
   - Ubuntu 16.0.4 machine (1 GB RAM, 1 CPU) with CURL and git. 
   - The ports used are 22, 80, 443, 1410, 2512, 15590 and 61172.
 
 **Notes:** 
 - For full functionality of PWA, SSL enabed domain is needed. 
-- For system generated emails (password reset etc), enter your sendgrid key.
+- For system generated emails (password reset etc), register for Sendgrid.
 
 ## 2. Getting Started
 
@@ -39,9 +39,9 @@ cd primechain/setup
 sudo bash -e primechain_setup.sh <ip-address> <email-address>
 ```
 ***Note:***
-1. Instead of the IP address you can enter the domain name above. Or after setup, go to the .env file and change the IP address or domain name.
-
-2. The email address is the admin email address
+1. Instead of the IP address you can enter the domain name above. 
+2. If required, after setup, go to the .env file and change the IP address or domain name.
+2. The email address is the admin email address.
 
 **The setup should take about 6 minutes. Once done, you will see something like this:**
 ```
@@ -50,8 +50,8 @@ ADMIN LOGIN CREDENTIALS FOR WEB APPLICATION
 =============================================
 
 #######################################################
-#  Email address: info@primechain.in #
-#  Password: 5Ofxy3bmMx0Z9xfelnDoHWbaGs5T2RyItZ1n4RYL #
+#  Email address: info@example.com #
+#  Password: 5Ofxy3bmMx0Z9xf22lnDoHWbaGs5T2RyItZ1n4RY #
 #######################################################
 
 
@@ -91,7 +91,6 @@ Enter your **google** and **facebook** credentials if you want to use login thro
 
 Copy **Primechain-API** username and password if you will be using the API service.
 
-
 To increase server timeout, login as root into your VM and then:
 ```
 nano /etc/ssh/sshd_config
@@ -116,7 +115,7 @@ listen [::]:443 ssl default_server;
 # Add the following to the location part of the server block
 # Add www.yourdomain.com only if you have made suitable A record entry in DNS
 
-    server_name yourdomain.com www.yourdomain.com;
+    server_name example.com.com www.example.com;
 
     location / {
         proxy_pass http://<ip-address>:1410; #whatever port your app runs on
@@ -136,13 +135,13 @@ sudo service nginx restart
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+sudo certbot --nginx -d example.com -d www.example.com
 
 # Only valid for 90 days, test the renewal process with
 certbot renew --dry-run
 
 ```
-Now visit https://yourdomain.com and you should see your web app.
+Now visit https://example.com and you should see your web app.
 
 ## 4. Adding nodes
 You can connect multiple non-seed nodes to a running Primechain blockchain. Login to a newly created Ubuntu VM that you will use as a non-seed node.
@@ -195,8 +194,8 @@ BLOCKCHAIN SUCCESSFULLY SET UP!
 --------------------------------------------
 PRIMECHAIN NODE CREDENTIALS
 --------------------------------------------
-rpcuser=Tzt5COtBS9jeADGOlwMRj9akTyWlCgkZDcqgkQZc
-rpcpassword=fzQQMIMJa1mKlDfghQPBQ0uYxgmqdLaYHqjYtTxe
+rpcuser=Tzt5COtBS9jeADGOlwMbg9akTyWlCgkZDcqgkQZc
+rpcpassword=fzQQMITyu1mKlDfghQPBQ0uYxgmqdLaYHqjYtTxe
 
 ========================================
 SET UP COMPLETED SUCCESSFULLY!
@@ -259,8 +258,8 @@ multichaind Primechain --daemon
 
 7. Click on ***Credentials --> Create credentials --> OAuth client ID***. 
 - Choose ***Application type*** as ***Web Application***.
-- Choose ***Authorized Javascript origins*** as something like https://test.primechainsandbox.com
-- Choose ***Authorized redirect URI*** as http://test.primechainsandbox.com/auth/google/callback
+- Choose ***Authorized Javascript origins*** as something like https://example.com
+- Choose ***Authorized redirect URI*** as http://example.com/auth/google/callback
 
 8. Copy your client ID and client secret.
 
@@ -282,16 +281,16 @@ GOOGLE_SECRET=<client secret>
 
 4. Click on ***WWW***
 
-5. Enter Site URL as https://test.primechainsandbox.com and click on Save
+5. Enter Site URL as https://example.com and click on Save
 
-6. Click on ***Settings --> Basic*** and copy App ID (use in .env as ***FACEBOOK_ID***) and App Secret (use in .env as ***FACEBOOK_SECRET***). Add App domain as https://test.primechainsandbox.com. Click on Save changes
+6. Click on ***Settings --> Basic*** and copy App ID and App Secret. Add App domain as https://example.com. Click on Save changes
 
-7. In Products -- Facebook Login --> Settings, in Valid OAuth Redirect URIs, enter https://test.primechainsandbox.com/auth/facebook/callback
+7. In Products -- Facebook Login --> Settings, in Valid OAuth Redirect URIs, enter https://example.com/auth/facebook/callback
 
 8. Login to the VM as root and update the below in .env:
 ```
-FACEBOOK_ID=<FACEBOOK_ID>
-FACEBOOK_SECRET=<FACEBOOK_SECRET>
+FACEBOOK_ID=<App ID>
+FACEBOOK_SECRET=<App Secret>
 ```
 
 9. Restart pm2 `pm2 restart 1`
