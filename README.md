@@ -27,9 +27,8 @@ Table of Contents
 8. [Basic troubleshooting](#8-basic-troubleshooting)
   * 8.1 [Stopping multichain](#81-stopping-multichain)
   * 8.2 [Starting multichain](#82-starting-multichain)
-  * 8.3 [Third party credentials](#83-third-party-credentials)
-  * 8.4 [MYSQL, MongoDB and API credentials](#84-mysql-mongodb-and-api-credentials)
-  * 8.5 [Increase server timeout](#85-increase-server-timeout)
+  * 8.3 [MYSQL, MongoDB and API credentials](#83-mysql-mongodb-and-api-credentials)
+  * 8.4 [Increase server timeout](#84-increase-server-timeout)
   
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
 
@@ -101,6 +100,58 @@ Login using the admin email and password to see this:
 ![Primechain Main Screen](https://www.primechaintech.com/images/primechain_main_screen.jpg)
 
 Cick on the buddha icon on the top right and change your password.
+
+
+***Third party credentials***
+  
+Login to the VM as root and then:
+```
+su primechain-user 
+cd ~
+cd primechain
+sudo nano .env
+```
+You will be able to access / edit the following credentials:
+
+***APPLICATION INFORMATION***
+```
+NODE_ENV=production
+APPLICATION_HOSTNAME=example.com
+APPLICATION_PORT=1410
+APPLICATION_NAME=primechain
+APPLICATION_SESSION_SECRET=<value>
+```
+***SENDGRID***
+```
+MAIL_SERVICE_NAME=SENDGRID
+MAIL_USERNAME=<usernam>
+MAIL_PASSWORD=<password>
+```
+***GOOGLE API CREDENTIALS***
+```
+GOOGLE_ID=<client id>
+GOOGLE_SECRET=<client secret>
+```
+***FACEBOOK API CREDENTIALS***
+```
+FACEBOOK_ID=<App ID>
+FACEBOOK_SECRET=<App Secret>
+```
+***MONGODB DATABASE PATH***
+```
+MONGODB_URI=mongodb://primechainuser:<password>@localhost:27$
+```
+***PRIMECHAIN-API INFORMATION***
+```
+PRIMECHAIN_USERNAME=<username>
+PRIMECHAIN_PASSWORD=<password>
+PRIMECHAIN_API_URN=example.com
+PRIMECHAIN_API_PORT=2512
+```
+Change the google, facebook and sendgrid credentials. After making the changes:
+```
+sudo pm2 restart 1 
+```
 
 ## 3. Setting up ngnix and SSL
 Login to the VM as root and then
@@ -254,54 +305,7 @@ cd ~
 multichaind Primechain --daemon
 ```
 
-  #### 8.3 Third party credentials
-  
-Login to the VM as root and then:
-```
-su primechain-user 
-cd ~
-cd primechain
-sudo nano .env
-```
-You will be able to access the following credentials:
-
-***APPLICATION INFORMATION***
-```
-NODE_ENV=production
-APPLICATION_HOSTNAME=example.com
-APPLICATION_PORT=1410
-APPLICATION_NAME=primechain
-APPLICATION_SESSION_SECRET=<value>
-```
-***SENDGRID***
-```
-MAIL_SERVICE_NAME=SENDGRID
-MAIL_USERNAME=<usernam>
-MAIL_PASSWORD=<password>
-```
-***GOOGLE API CREDENTIALS***
-```
-GOOGLE_ID=<client id>
-GOOGLE_SECRET=<client secret>
-```
-***FACEBOOK API CREDENTIALS***
-```
-FACEBOOK_ID=<App ID>
-FACEBOOK_SECRET=<App Secret>
-```
-***MONGODB DATABASE PATH***
-```
-MONGODB_URI=mongodb://primechainuser:<password>@localhost:27$
-```
-***PRIMECHAIN-API INFORMATION***
-```
-PRIMECHAIN_USERNAME=<username>
-PRIMECHAIN_PASSWORD=<password>
-PRIMECHAIN_API_URN=example.com
-PRIMECHAIN_API_PORT=2512
-```
-
-### 8.4 MYSQL, MongoDB and API credentials
+### 8.3 MYSQL, MongoDB and API credentials
 Login to the VM as root and then:
 ```
 sudo nano primechain-api.out
@@ -326,7 +330,7 @@ dbname= primechain
 dbuser= <username>
 dbpass=<password>
 ```
-### 8.5 Increase server timeout
+### 8.4 Increase server timeout
 To increase server timeout, login as root into your VM and then:
 ```
 nano /etc/ssh/sshd_config
