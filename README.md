@@ -70,7 +70,7 @@ http://example.com:2512/api/v1/get_api_key
 All your credentials are in root/primechain-api.out
 
 ```
-To view mysql, mongo and multichain credentials
+Later, to view admin, mysql, mongo and multichain credentials
 ```
 nano ~root/primechain-api.out
 ```
