@@ -274,7 +274,7 @@ cd primechain
 sudo nano .env
 ```
 You will be able to access the following credentials:
-
+```
 ***APPLICATION INFORMATION***
 NODE_ENV=production
 APPLICATION_HOSTNAME=example.com
