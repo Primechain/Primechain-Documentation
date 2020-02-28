@@ -130,11 +130,11 @@ Add www.yourdomain.com only if you have made suitable A record entry in DNS
         proxy_cache_bypass $http_upgrade;
     }
 ```
-# Check NGINX config
+Check NGINX config
 ```
 sudo nginx -t
 ```
-# Restart NGINX
+Restart NGINX
 ```
 sudo service nginx restart
 ```
@@ -264,6 +264,7 @@ cd primechain
 sudo nano .env
 ```
 You will be able to access the following credentials:
+
 ***APPLICATION INFORMATION***
 ```
 NODE_ENV=production
