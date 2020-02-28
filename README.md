@@ -91,12 +91,16 @@ All your credentials are in root/primechain-api.out
 
 ```
 Access your IP address or domain in a browser to see:
+
 ![Primechain Login Screen](https://www.primechaintech.com/images/primechain_login_screen.jpg)
 
 ***Note:*** You need to add the port number e.g. `http://64.227.17.54:1410/login`
+
 Login using the admin email and password to see this:
+
 ![Primechain Main Screen](https://www.primechaintech.com/images/primechain_main_screen.jpg)
 
+Cick on the buddha icon on the top right and change your password.
 
 ## 3. Setting up ngnix and SSL
 Login to the VM as root and then
