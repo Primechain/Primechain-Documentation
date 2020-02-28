@@ -115,7 +115,8 @@ listen 443 ssl default_server;
 listen [::]:443 ssl default_server;
 ```
 
-Replace the following to the location part of the server block
+Replace the following to the location part of the server block.
+
 Add www.yourdomain.com only if you have made suitable A record entry in DNS
 ```
     server_name example.com.com www.example.com;
@@ -137,7 +138,8 @@ sudo nginx -t
 ```
 sudo service nginx restart
 ```
-Then add certificate from LetsEncrypt
+Then add certificate from LetsEncrypt. 
+***Note:*** You need a domain name to get an SSL certificate. It will not work on an IP address. 
 ```
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
@@ -148,7 +150,6 @@ Only valid for 90 days, test the renewal process with
 ```
 certbot renew --dry-run
 ```
-
 Now visit https://example.com and you should see your web app.
 
 ## 4. Adding nodes
