@@ -282,6 +282,7 @@ FACEBOOK_SECRET=<App Secret>
 MONGODB_URI=mongodb://primechainuser:<password>@localhost:27$
 ```
 ***PRIMECHAIN-API INFORMATION***
+```
 PRIMECHAIN_USERNAME=<username>
 PRIMECHAIN_PASSWORD=<password>
 PRIMECHAIN_API_URN=example.com
