@@ -237,9 +237,9 @@ GRANT PERMISSION FROM THE PRIMECHAIN MASTER NODE AND TYPE yes TO CONTINUE...
 
 Login to the Primechain Seed Node and run the following:
 ```
-su primechain-user
+sudo su primechain-user
 cd ~
-multichain-cli primechain grant 1aMiTQjLXABeoKtVgBcr5zzVXtT1eRvRTfY3RJ connect
+multichain-cli primechain grant <multichain-address> connect
 ```
 **Note:** Don't forget to use the correct address in "multichain-cli primechain grant" above.
 
@@ -262,6 +262,8 @@ SET UP COMPLETED SUCCESSFULLY!
 ========================================
 ```
 Note down the rpcuser and rpcpassword. 
+
+Login as the admin user in Primechain web application and go to Blockchain Admin --> List peers. You will be able to see details about the newly added node.
 
 ## 5. Updating Primechain 
 
