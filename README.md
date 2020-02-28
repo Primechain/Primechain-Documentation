@@ -27,8 +27,9 @@ Table of Contents
 8. [Basic troubleshooting](#8-basic-troubleshooting)
   * 8.1 [Stopping multichain](#81-stopping-multichain)
   * 8.2 [Starting multichain](#82-starting-multichain)
-
-
+  * 8.3 [Basic credentials](#83-basic-credentials)
+  * 8.4 [Advanced credentials](#84-advanced-credentials)
+  
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
 
 10. [MongoDB Compass](#10-mongodb-compass)
@@ -308,9 +309,32 @@ PRIMECHAIN_USERNAME=<username>
 PRIMECHAIN_PASSWORD=<password>
 PRIMECHAIN_API_URN=example.com
 PRIMECHAIN_API_PORT=2512
-
 ```
-  
+
+### 8.4 Advanced credentials
+  Login to the VM as root and then:
+```
+sudo nano primechain-api.out
+```
+You will be able to access the following credentials:
+```
+***MYSQL DATABASE CREDENTIALS***
+dbrootpass=3uD1RCP2hAiGkWHQxwBoYfhKtIKODA_700xLIHGu
+dbuser=epEhxxgUHMZt6mf2H28C
+dbpass=5Ofxy3bmMx0Z9xfelnDoHWbaGs5T2RyItZ1n4RYL
+
+
+***API CREDENTIALS***
+rpcuser=8ZlxHPJcZrD7bJXBvqILhWs13Q4n30qyfsExoXyi
+rpcpassword=Yv9RFY7hJ7IZjhC3bOtSnwSFUyxfU5xEjlcE1ahy
+
+
+***MONGODB DATABASE CREDENTIALS***
+dbname= primechain
+dbuser= primechainuser
+dbpass=5Ofxy3bmMx0Z9xfelnDoHWbaGs5T2RyItZ1n4RYL
+```
+
 ## 9. Obtaining third party API keys
 
 ### 9.1 Google
