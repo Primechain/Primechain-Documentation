@@ -29,6 +29,7 @@ Table of Contents
   * 8.2 [Starting multichain](#82-starting-multichain)
   * 8.3 [Basic credentials](#83-basic-credentials)
   * 8.4 [Advanced credentials](#84-advanced-credentials)
+  * 8.5 [Increase server timeout](#85-increase-server-timeout)
   
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
 
@@ -89,36 +90,13 @@ http://example.com:2512/api/v1/get_api_key
 All your credentials are in root/primechain-api.out
 
 ```
-Later, to view admin, mysql, mongo and multichain credentials
-```
-nano ~root/primechain-api.out
-```
+Access your IP address or domain in a browser to see:
+![Primechain Login Screen](https://www.primechaintech.com/images/primechain_login_screen.jpg)
 
+***Note:*** You need to add the port number e.g. `http://64.227.17.54:1410/login`
 
-***Update the below in .env, to use sendgrid for transactional emails.***
-```
-MAIL_SERVICE_NAME=SENDGRID
-MAIL_USERNAME=<your-username>
-MAIL_PASSWORD=<your-password>
-```
-Enter your **google** and **facebook** credentials if you want to use login through these services. If not, comment out the relevant code in `src/web/views/users/account/login.hbs`
+![Primechain Main Screen](https://www.primechaintech.com/images/primechain_main_screen.jpg)
 
-Copy **Primechain-API** username and password if you will be using the API service.
-
-To increase server timeout, login as root into your VM and then:
-```
-nano /etc/ssh/sshd_config
-
-# Then add the following lines
-ClientAliveInterval 120
-ClientAliveCountMax 720
-```
-***Other credentials***
-
-For MySQL, API and MongoDB credentials:
-```
-nano primechain-api.out 
-```
 
 ## 3. Setting up ngnix and SSL
 Login to the VM as root and then
@@ -335,6 +313,15 @@ rpcpassword=<password>
 dbname= primechain
 dbuser= <username>
 dbpass=<password>
+```
+### 8.5 Increase server timeout
+To increase server timeout, login as root into your VM and then:
+```
+nano /etc/ssh/sshd_config
+
+# Then add the following lines
+ClientAliveInterval 120
+ClientAliveCountMax 720
 ```
 
 ## 9. Obtaining third party API keys
