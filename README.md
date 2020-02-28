@@ -292,46 +292,46 @@ Note:
 
 ## 8. Basic troubleshooting
 
-  #### 8.1 Stopping multichain
+#### 8.1 Stopping multichain
 Login to the server / VM as a sudo or root user.
 ```
 sudo su primechain-user 
 cd ~
 multichain-cli Primechain stop
 ```
-  #### 8.2 Starting multichain
+#### 8.2 Starting multichain
   Login to the server / VM as a sudo or root user.
 ```
 sudo su primechain-user 
 cd ~
 multichaind Primechain --daemon
 ```
-
-### 8.3 MYSQL, MongoDB and API credentials
+#### 8.3 MYSQL, MongoDB and API credentials
 Login to the VM as root and then:
 ```
 sudo nano primechain-api.out
 ```
 You will be able to access the following credentials:
-***MYSQL DATABASE CREDENTIALS***
+
+MYSQL DATABASE CREDENTIALS
 ```
 dbrootpass=<root-password>
 dbuser=<username>
 dbpass=<password>
 ```
-
-***API CREDENTIALS***
+API CREDENTIALS
 ```
 rpcuser=<username>
 rpcpassword=<password>
 ```
 
-***MONGODB DATABASE CREDENTIALS***
+MONGODB DATABASE CREDENTIALS
 ```
 dbname= primechain
 dbuser= <username>
 dbpass=<password>
 ```
+
 ### 8.4 Increase server timeout
 To increase server timeout, login as root into your VM and then:
 ```
