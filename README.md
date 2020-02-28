@@ -11,16 +11,26 @@ And that's why we have built Primechain.
 Table of Contents
 -----------------
 1. [Prerequisites](#1-prerequisites)
+
 2. [Getting Started](#2-getting-started)
+
 3. [Setting up ngnix and SSL](#3-setting-up-ngnix-and-ssl)
+
 4. [Adding nodes](#4-adding-nodes)
+
 5. [Updating Primechain](#5-updating-primechain)
+
 6. [API Documentation](#6-api-documentation)
+
 7. [Sandbox](#7-sandbox)
+
 8. [Basic troubleshooting](#8-basic-troubleshooting)
-  8.1 [Stopping multichain](#81-stopping-multichain)
-  8.2 [Starting multichain](#82-starting-multichain)
+  * 8.1 [Stopping multichain](#81-stopping-multichain)
+  * 8.2 [Starting multichain](#82-starting-multichain)
+
+
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
+
 10. [MongoDB Compass](#10-mongodb-compass)
 
 ## 1. Prerequisites
@@ -83,13 +93,7 @@ Later, to view admin, mysql, mongo and multichain credentials
 nano ~root/primechain-api.out
 ```
 
-***The web application credentials can be obtained from:**
-```
-su primechain-user 
-cd ~
-cd primechain
-sudo nano .env
-```
+
 ***Update the below in .env, to use sendgrid for transactional emails.***
 ```
 MAIL_SERVICE_NAME=SENDGRID
@@ -260,6 +264,61 @@ cd ~
 multichaind Primechain --daemon
 ```
 
+  #### 8.3 Basic credentials
+  
+Login to the VM as root and then:
+```
+su primechain-user 
+cd ~
+cd primechain
+sudo nano .env
+```
+You will be able to access the following credentials:
+
+--------------------------------------------
+APPLICATION INFORMATION
+--------------------------------------------
+NODE_ENV=production
+APPLICATION_HOSTNAME=example.com
+APPLICATION_PORT=1410
+APPLICATION_NAME=primechain
+APPLICATION_SESSION_SECRET=<value>
+
+
+--------------------------------------------
+SENDGRID
+--------------------------------------------
+MAIL_SERVICE_NAME=SENDGRID
+MAIL_USERNAME=<usernam>
+MAIL_PASSWORD=<password>
+
+--------------------------------------------
+GOOGLE API CREDENTIALS
+--------------------------------------------
+GOOGLE_ID=<client id>
+GOOGLE_SECRET=<client secret>
+
+--------------------------------------------
+FACEBOOK API CREDENTIALS
+--------------------------------------------
+FACEBOOK_ID=<App ID>
+FACEBOOK_SECRET=<App Secret>
+  
+--------------------------------------------
+MONGODB DATABASE PATH
+--------------------------------------------
+MONGODB_URI=mongodb://primechainuser:<password>@localhost:27$
+
+--------------------------------------------
+PRIMECHAIN-API INFORMATION
+--------------------------------------------
+PRIMECHAIN_USERNAME=<username>
+PRIMECHAIN_PASSWORD=<password>
+PRIMECHAIN_API_URN=example.com
+PRIMECHAIN_API_PORT=2512
+
+```
+  
 ## 9. Obtaining third party API keys
 
 ### 9.1 Google
