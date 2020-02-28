@@ -317,22 +317,24 @@ PRIMECHAIN_API_PORT=2512
 sudo nano primechain-api.out
 ```
 You will be able to access the following credentials:
-```
 ***MYSQL DATABASE CREDENTIALS***
-dbrootpass=3uD1RCP2hAiGkWHQxwBoYfhKtIKODA_700xLIHGu
-dbuser=epEhxxgUHMZt6mf2H28C
-dbpass=5Ofxy3bmMx0Z9xfelnDoHWbaGs5T2RyItZ1n4RYL
-
+```
+dbrootpass=<root-password>
+dbuser=<username>
+dbpass=<password>
+```
 
 ***API CREDENTIALS***
-rpcuser=8ZlxHPJcZrD7bJXBvqILhWs13Q4n30qyfsExoXyi
-rpcpassword=Yv9RFY7hJ7IZjhC3bOtSnwSFUyxfU5xEjlcE1ahy
-
+```
+rpcuser=<username>
+rpcpassword=<password>
+```
 
 ***MONGODB DATABASE CREDENTIALS***
+```
 dbname= primechain
-dbuser= primechainuser
-dbpass=5Ofxy3bmMx0Z9xfelnDoHWbaGs5T2RyItZ1n4RYL
+dbuser= <username>
+dbpass=<password>
 ```
 
 ## 9. Obtaining third party API keys
