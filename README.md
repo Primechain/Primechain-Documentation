@@ -37,12 +37,18 @@ Login to server / VM as a sudo or root user. Then run the following:
 sudo git clone https://primechainuser@github.com/Primechain/primechain
 <Enter-Password>
 cd primechain/setup
-sudo bash -e primechain_setup.sh <ip-address> <email-address>
+sudo bash -e primechain_setup.sh <ip-address or domain-name> <email-address>
 ```
 ***Note:***
-1. Instead of the IP address you can enter the domain name above. 
-2. If required, after setup, go to the .env file and change the IP address or domain name.
-2. The email address is the admin email address.
+1. If required, after setup, go to the .env file and change the IP address or domain name.
+```
+sudo su primechain-user
+cd ~
+cd primechain
+sudo nano .env
+```
+
+2. The email address is the admin email address. This can be changed later from mongodb in the `users` collection.
 
 **The setup should take about 6 minutes. Once done, you will see something like this:**
 ```
