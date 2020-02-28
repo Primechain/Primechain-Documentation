@@ -108,15 +108,16 @@ Login to the VM as root and then
 sudo ufw allow https
 sudo apt install nginx
 sudo nano /etc/nginx/sites-available/default
-
-# Uncomment the following in SSL configuration
-
+```
+Uncomment the following in SSL configuration
+```
 listen 443 ssl default_server;
 listen [::]:443 ssl default_server;
+```
 
-# Add the following to the location part of the server block
-# Add www.yourdomain.com only if you have made suitable A record entry in DNS
-
+Replace the following to the location part of the server block
+Add www.yourdomain.com only if you have made suitable A record entry in DNS
+```
     server_name example.com.com www.example.com;
 
     location / {
@@ -127,22 +128,27 @@ listen [::]:443 ssl default_server;
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
-
+```
 # Check NGINX config
+```
 sudo nginx -t
-
+```
 # Restart NGINX
+```
 sudo service nginx restart
-
+```
+Then add certificate from LetsEncrypt
+```
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
 sudo certbot --nginx -d example.com -d www.example.com
-
-# Only valid for 90 days, test the renewal process with
-certbot renew --dry-run
-
 ```
+Only valid for 90 days, test the renewal process with
+```
+certbot renew --dry-run
+```
+
 Now visit https://example.com and you should see your web app.
 
 ## 4. Adding nodes
