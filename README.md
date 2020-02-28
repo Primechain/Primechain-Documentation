@@ -224,6 +224,10 @@ sudo git pull
 sudo git pull && pm2 restart 1
 sudo git pull && npm i && pm2 restart 1
 ```
+Note:
+1. If you have only made hbs changes, then use `sudo git pull`
+2. If you have made changes to js, then use `sudo git pull && pm2 restart 1`
+1. If you need to update node modules then use `sudo git pull && npm i && pm2 restart 1`
 
 ## 6. API Documentation
 [https://www.primechaintech.com/documentation](https://www.primechaintech.com/documentation)
