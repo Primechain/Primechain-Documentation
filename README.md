@@ -19,6 +19,7 @@ Table of Contents
 7. [Sandbox](#7-sandbox)
 8. [Basic troubleshooting](#8-basic-troubleshooting)
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
+10. [MongoDB Compass](#10-mongodb-compass)
 
 ## 1. Prerequisites
 - To setup Primechain you need: 
@@ -98,6 +99,12 @@ nano /etc/ssh/sshd_config
 # Then add the following lines
 ClientAliveInterval 120
 ClientAliveCountMax 720
+```
+***Other credentials***
+
+For MySQL, API and MongoDB credentials:
+```
+nano primechain-api.out 
 ```
 
 ## 3. Setting up ngnix and SSL
@@ -296,3 +303,19 @@ FACEBOOK_SECRET=<App Secret>
 9. Restart pm2 `pm2 restart 1`
 
 **Note:** After a successful sign in with Facebook, a user will be redirected back to the home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
+
+## 10. MongoDB Compass
+
+Login as root to the VM and then run:
+```
+sudo nano /etc/mongod.conf
+```
+Edit `bindIp: 127.0.0.1` to `bindIp: 127.0.0.1,<ip-address>`
+
+Then:
+```
+sudo service mongod restart
+sudo service mongod status
+```
+
+![Mongo Compass Community](https://www.primechaintech.com/images/mongo_connection.jpg)
