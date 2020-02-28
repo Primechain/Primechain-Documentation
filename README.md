@@ -275,9 +275,7 @@ sudo nano .env
 ```
 You will be able to access the following credentials:
 
---------------------------------------------
-APPLICATION INFORMATION
---------------------------------------------
+***APPLICATION INFORMATION***
 NODE_ENV=production
 APPLICATION_HOSTNAME=example.com
 APPLICATION_PORT=1410
@@ -285,33 +283,27 @@ APPLICATION_NAME=primechain
 APPLICATION_SESSION_SECRET=<value>
 
 
---------------------------------------------
-SENDGRID
---------------------------------------------
+***SENDGRID***
 MAIL_SERVICE_NAME=SENDGRID
 MAIL_USERNAME=<usernam>
 MAIL_PASSWORD=<password>
 
---------------------------------------------
-GOOGLE API CREDENTIALS
---------------------------------------------
+
+***GOOGLE API CREDENTIALS***
 GOOGLE_ID=<client id>
 GOOGLE_SECRET=<client secret>
 
---------------------------------------------
-FACEBOOK API CREDENTIALS
---------------------------------------------
+
+***FACEBOOK API CREDENTIALS***
 FACEBOOK_ID=<App ID>
 FACEBOOK_SECRET=<App Secret>
   
---------------------------------------------
-MONGODB DATABASE PATH
---------------------------------------------
+  
+***MONGODB DATABASE PATH***
 MONGODB_URI=mongodb://primechainuser:<password>@localhost:27$
 
---------------------------------------------
-PRIMECHAIN-API INFORMATION
---------------------------------------------
+
+***PRIMECHAIN-API INFORMATION***
 PRIMECHAIN_USERNAME=<username>
 PRIMECHAIN_PASSWORD=<password>
 PRIMECHAIN_API_URN=example.com
