@@ -27,8 +27,8 @@ Table of Contents
 8. [Basic troubleshooting](#8-basic-troubleshooting)
   * 8.1 [Stopping multichain](#81-stopping-multichain)
   * 8.2 [Starting multichain](#82-starting-multichain)
-  * 8.3 [Basic credentials](#83-basic-credentials)
-  * 8.4 [Advanced credentials](#84-advanced-credentials)
+  * 8.3 [Third party credentials](#83-third-party-credentials)
+  * 8.4 [MYSQL, MongoDB and API credentials](#84-mysql-mongodb-and-api-credentials)
   * 8.5 [Increase server timeout](#85-increase-server-timeout)
   
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
@@ -243,7 +243,7 @@ cd ~
 multichaind Primechain --daemon
 ```
 
-  #### 8.3 Basic credentials
+  #### 8.3 Third party credentials
   
 Login to the VM as root and then:
 ```
@@ -253,35 +253,34 @@ cd primechain
 sudo nano .env
 ```
 You will be able to access the following credentials:
-```
 ***APPLICATION INFORMATION***
+```
 NODE_ENV=production
 APPLICATION_HOSTNAME=example.com
 APPLICATION_PORT=1410
 APPLICATION_NAME=primechain
 APPLICATION_SESSION_SECRET=<value>
-
-
+```
 ***SENDGRID***
+```
 MAIL_SERVICE_NAME=SENDGRID
 MAIL_USERNAME=<usernam>
 MAIL_PASSWORD=<password>
-
-
+```
 ***GOOGLE API CREDENTIALS***
+```
 GOOGLE_ID=<client id>
 GOOGLE_SECRET=<client secret>
-
-
+```
 ***FACEBOOK API CREDENTIALS***
+```
 FACEBOOK_ID=<App ID>
 FACEBOOK_SECRET=<App Secret>
-  
-  
+```
 ***MONGODB DATABASE PATH***
+```
 MONGODB_URI=mongodb://primechainuser:<password>@localhost:27$
-
-
+```
 ***PRIMECHAIN-API INFORMATION***
 PRIMECHAIN_USERNAME=<username>
 PRIMECHAIN_PASSWORD=<password>
@@ -289,8 +288,8 @@ PRIMECHAIN_API_URN=example.com
 PRIMECHAIN_API_PORT=2512
 ```
 
-### 8.4 Advanced credentials
-  Login to the VM as root and then:
+### 8.4 MYSQL, MongoDB and API credentials
+Login to the VM as root and then:
 ```
 sudo nano primechain-api.out
 ```
@@ -394,5 +393,5 @@ Then:
 sudo service mongod restart
 sudo service mongod status
 ```
-
+Download Mongo Compass Community edition and create a new connection.
 ![Mongo Compass Community](https://www.primechaintech.com/images/mongo_connection.jpg)
