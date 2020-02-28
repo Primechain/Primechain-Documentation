@@ -18,6 +18,8 @@ Table of Contents
 6. [API Documentation](#6-api-documentation)
 7. [Sandbox](#7-sandbox)
 8. [Basic troubleshooting](#8-basic-troubleshooting)
+  8.1 [Stopping multichain](#81-stopping-multichain)
+  8.2 [Starting multichain](#82-starting-multichain)
 9. [Obtaining third party API keys](#9-obtaining-third-party-api-keys)
 10. [MongoDB Compass](#10-mongodb-compass)
 
