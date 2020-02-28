@@ -242,15 +242,16 @@ Note:
 [https://primechainsandbox.com](https://primechainsandbox.com)
 
 ## 8. Basic troubleshooting
-***Stop / start multichain***
+
+  #### 8.1 Stopping multichain
 Login to the server / VM as a sudo or root user.
-For ***stopping*** multichain:
 ```
 sudo su primechain-user 
 cd ~
 multichain-cli Primechain stop
 ```
-For ***starting*** multichain:
+  #### 8.2 Starting multichain
+  Login to the server / VM as a sudo or root user.
 ```
 sudo su primechain-user 
 cd ~
